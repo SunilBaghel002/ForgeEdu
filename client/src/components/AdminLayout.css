@@ -1,12 +1,13 @@
 .admin-layout {
   display: flex;
   min-height: 100vh;
+  background: var(--bg-primary);
 }
 
 .admin-sidebar {
   width: var(--sidebar-width);
   background: var(--bg-secondary);
-  border-right: 1px solid var(--border-color);
+  border-right: 1px solid rgba(255, 255, 255, 0.03);
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -15,106 +16,137 @@
   bottom: 0;
   z-index: 50;
   overflow-y: auto;
+  transition: all 0.3s ease;
 }
 
 .sidebar-header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 24px 20px;
-  border-bottom: 1px solid var(--border-color);
+  gap: 12px;
+  padding: 32px 24px;
 }
 
 .sidebar-logo {
   font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-primary);
+  letter-spacing: -1px;
 }
 .sidebar-logo span { color: var(--accent-gold); }
 
 .sidebar-label {
-  padding: 20px 20px 8px;
+  padding: 24px 24px 12px;
   font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
   color: var(--text-muted);
   text-transform: uppercase;
 }
 
 .sidebar-nav {
   flex: 1;
-  padding: 4px 10px;
+  padding: 0 16px;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
 }
 
 .sidebar-link {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 14px;
-  border-radius: var(--radius-md);
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 12px;
   color: var(--text-secondary);
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
-  border: none;
-  background: none;
+  border: 1px solid transparent;
+  background: transparent;
   cursor: pointer;
   font-family: var(--font-body);
   width: 100%;
-  text-align: left;
 }
+
 .sidebar-link:hover {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.03);
   color: var(--text-primary);
+  transform: translateX(4px);
 }
+
 .sidebar-link.active {
-  background: var(--accent-gold-dim);
+  background: linear-gradient(135deg, rgba(13, 124, 74, 0.12), rgba(13, 124, 74, 0.06));
   color: var(--accent-gold);
-  font-weight: 600;
+  border-color: rgba(13, 124, 74, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-link svg {
+  transition: transform 0.3s ease;
+}
+.sidebar-link:hover svg {
+  transform: scale(1.1);
 }
 
 .sidebar-footer {
-  padding: 12px 10px;
-  border-top: 1px solid var(--border-color);
+  padding: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .logout-btn:hover {
-  background: rgba(239, 68, 68, 0.1) !important;
-  color: var(--danger) !important;
+  background: rgba(239, 68, 68, 0.05) !important;
+  color: #f87171 !important;
+  border-color: rgba(239, 68, 68, 0.1) !important;
 }
 
 .admin-main {
   flex: 1;
   margin-left: var(--sidebar-width);
-  padding: 32px;
+  padding: 48px;
   min-height: 100vh;
   background: var(--bg-primary);
 }
 
-@media (max-width: 1024px) {
-  .admin-sidebar { width: 220px; }
-  .admin-main { margin-left: 220px; }
+@media (max-width: 1200px) {
+  :root { --sidebar-width: 240px; }
+  .admin-main { padding: 32px; }
 }
 
 @media (max-width: 768px) {
   .admin-sidebar {
     width: 100%;
-    position: relative;
-    height: auto;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    height: 80px;
     flex-direction: row;
     overflow-x: auto;
-    padding: 0;
+    padding: 0 10px;
+    border-right: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(10, 15, 29, 0.95);
+    backdrop-filter: blur(20px);
   }
-  .sidebar-header { display: none; }
-  .sidebar-label { display: none; }
-  .sidebar-nav { flex-direction: row; padding: 8px; }
-  .sidebar-link { white-space: nowrap; }
-  .sidebar-footer { display: none; }
+  .sidebar-header, .sidebar-label, .sidebar-footer { display: none; }
+  .sidebar-nav { 
+    flex-direction: row; 
+    padding: 0; 
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .sidebar-link { 
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px;
+    font-size: 0.7rem;
+    border-radius: 8px;
+    width: auto;
+  }
+  .sidebar-link:hover { transform: none; }
+  .sidebar-link span { text-align: center; }
   .admin-layout { flex-direction: column; }
-  .admin-main { margin-left: 0; padding: 20px; }
+  .admin-main { margin-left: 0; padding: 24px 24px 100px; }
 }
