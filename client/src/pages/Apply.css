@@ -1,0 +1,112 @@
+.apply-page.public-page { min-height: 100vh; background: #f8fafc; }
+
+.apply-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 120px 24px 80px;
+}
+
+.apply-header {
+  margin-bottom: 32px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  transition: color 0.2s;
+}
+.back-link:hover { color: #b45309; }
+
+.apply-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  color: #0f172a;
+}
+
+.apply-header .text-gold { color: #b45309; }
+.apply-header .text-muted { color: #64748b; }
+
+.public-page .apply-form {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  padding: 36px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.public-page .form-label {
+  color: #374151;
+}
+
+.public-page .form-input,
+.public-page .form-select {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #0f172a;
+}
+.public-page .form-input:focus,
+.public-page .form-select:focus {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.12);
+}
+.public-page .form-input::placeholder { color: #94a3b8; }
+
+.input-error {
+  border-color: var(--danger) !important;
+}
+
+.error-text {
+  display: block;
+  color: var(--danger);
+  font-size: 0.78rem;
+  margin-top: 4px;
+}
+
+.apply-success {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 24px 80px;
+}
+
+.public-page .success-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+  padding: 60px 40px;
+  max-width: 500px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.success-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  margin: 20px 0 12px;
+  color: #0f172a;
+}
+
+.success-card .text-muted { color: #64748b; }
+
+.success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+@media (max-width: 640px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .public-page .apply-form { padding: 24px; }
+}

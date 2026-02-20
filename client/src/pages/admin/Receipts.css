@@ -1,0 +1,55 @@
+.receipts-page { animation: fadeIn 0.4s ease; }
+.page-header { margin-bottom: 32px; }
+.page-header h1 { font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 4px; }
+
+.receipt-modal {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  width: 95%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+/* ─── Printable Receipt ─── */
+.receipt-preview {
+  background: #ffffff;
+  color: #111;
+  padding: 40px;
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+  font-family: 'Sora', sans-serif;
+}
+
+.receipt-header-print { text-align: center; margin-bottom: 24px; border-bottom: 2px solid #f59e0b; padding-bottom: 20px; }
+.receipt-logo { font-size: 1.6rem; font-weight: 800; color: #b45309; margin-bottom: 6px; }
+.receipt-inst-info { font-size: 0.8rem; color: #666; line-height: 1.5; }
+.receipt-title-print { font-size: 1.1rem; font-weight: 700; letter-spacing: 3px; color: #b45309; margin-top: 14px; }
+
+.receipt-meta { display: flex; justify-content: space-between; margin-bottom: 20px; font-size: 0.85rem; }
+
+.receipt-body { border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; }
+.receipt-row {
+  display: flex; justify-content: space-between; padding: 12px 16px;
+  font-size: 0.9rem; border-bottom: 1px solid #f3f4f6;
+}
+.receipt-row:last-child { border-bottom: none; }
+.receipt-row span:first-child { color: #6b7280; font-weight: 500; }
+.receipt-row span:last-child { font-weight: 600; }
+.receipt-row.highlight { background: #fef3c7; }
+.receipt-row.highlight span:last-child { color: #b45309; font-size: 1.05rem; }
+
+.receipt-footer-print { margin-top: 40px; text-align: right; }
+.receipt-stamp p { font-size: 0.85rem; color: #666; }
+.receipt-sig-line { width: 180px; border-top: 1px solid #333; margin: 30px 0 6px auto; }
+
+.receipt-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.receipt-actions .btn { flex: 1; justify-content: center; min-width: 140px; }
+
+.email-preview { background: var(--bg-tertiary); border-radius: var(--radius-md); padding: 20px; }
+.email-preview p { font-size: 0.9rem; margin-bottom: 8px; }
+.email-body-preview { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-light); }
+.email-body-preview p { color: var(--text-secondary); line-height: 1.6; }
