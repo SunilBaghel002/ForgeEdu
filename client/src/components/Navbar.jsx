@@ -24,8 +24,11 @@ export default function Navbar() {
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
 
+  const isHomePage = location.pathname === '/'
+  const navClass = `navbar ${(!isHomePage || scrolled) ? 'navbar-scrolled' : ''}`
+
   return (
-    <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
+    <nav className={navClass}>
       <div className="navbar-inner container">
         <Link to="/" className="navbar-brand">
           <Flame size={28} className="navbar-flame" />
